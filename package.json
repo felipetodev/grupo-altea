@@ -1,0 +1,15 @@
+{
+  "name": "grupo_altea",
+  "version": "1.0.0",
+  "description": "Grupo Altea Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "sergey --watch",
+    "start": "sergey"
+  },
+  "author": "@felipetodev.com",
+  "license": "MIT",
+  "dependencies": {
+    "sergey": "0.0.13"
+  }
+}
