@@ -256,8 +256,19 @@ header {
 }
 
 .services__title {
+    position: relative;
     padding-bottom: 1.25rem; /* revisar */
     font-size: 2rem;
+}
+
+.services__title::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 4rem;
+    height: 3px;
+    background: var(--color-accent);
+    bottom: 0;
 }
 
 .service__title {
@@ -402,7 +413,7 @@ header {
 .about__us p,
 .about__howwedo p,
 .about__challenge p {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     margin-bottom: 1.25rem;
     text-align: start;
 }
@@ -418,8 +429,6 @@ span {
     font-weight: bold;
 }
 
-/* Contacto */
-
 @keyframes drop {
     0% {
         opacity: 0;
@@ -427,5 +436,151 @@ span {
     } 100% {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+/* Contacto */
+
+.form__container {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 100%;
+    max-width: 800px;
+    /* box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2); */
+    z-index: 777;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact__form {
+    background-color: #d7dcf5;
+    position: relative;
+}
+
+form {
+    padding: 1rem 2rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+}
+
+.form__title {
+    padding: 0.5rem 0rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: start;
+}
+
+.input__container {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    border: 2px solid var(--color-primary);
+    /* border-radius: 1px; */
+    /* background: none; */
+    padding: 0.6rem 1.2rem;
+    margin: 0.4rem 0rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    transition: all 300ms ease;
+}
+
+textarea.input {
+    padding: 0.8rem 1.2rem;
+    min-height: 150px;
+    resize: none;
+    overflow-y: auto;
+    font-size: 0.8rem;
+}
+
+.input__container label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 400;
+    pointer-events: none;
+    z-index: 999;
+    transition: all 500ms ease;
+}
+
+.input__container.textarea label {
+    top: 1rem;
+    transform: translateY(0);
+}
+
+.form__btn {
+    padding: 0.6rem 1.3rem;
+    background-color: #f4f4fc;
+    border: 2px solid #f4f4fc;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    outline: none;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin: 0;
+}
+
+.input__container.focus label {
+    top: 0;
+    transform: translateY(-65%);
+    left: 0px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #f2835e;
+}
+
+.input__container.focus span::before,
+.input__container.focus span::after {
+    width: 50%;
+    opacity: 1;
+}
+
+.google__maps {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form::before {
+        top: -13px;
+        left: initial;
+        right: 70px;
+    }
+
+    .google__maps {
+        height: 400px;
+    }
+
+    .input__container label,
+    .input__container.textarea label {
+        top: 0;
+        left: 0;
+        transform: translateY(-74%);
     }
 }

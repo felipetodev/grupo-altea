@@ -55,7 +55,36 @@ if(path !== "/") {
     }
 }
 
+/* Contact Form */
+
+if(d.querySelectorAll(".input")) {
+    const $inputs = d.querySelectorAll(".input");
+    function focusInput() {
+        $inputs.forEach(input => {
+            input.addEventListener("click", e => {
+                // console.log(e);
+                const parentEl = e.target.offsetParent;
+                if(e.target.value === "") {
+                    parentEl.classList.add("focus");
+                } else {
+                    parentEl.classList.remove("focus");
+                }
+            });
+
+            input.addEventListener("blur", e => {
+                const parentEl = e.target.offsetParent;
+                if(e.target.value === "") {
+                    parentEl.classList.remove("focus");
+                } else {
+                    parentEl.classList.add("focus");
+                }
+            });
+        });
+    }
+}
+
 d.addEventListener("DOMContentLoaded", e => {
     headerObserver();
     heroUpdate();
+    focusInput();
 });
