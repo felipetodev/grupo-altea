@@ -61,7 +61,7 @@ if(d.querySelectorAll(".input")) {
     const $inputs = d.querySelectorAll(".input");
     function focusInput() {
         $inputs.forEach(input => {
-            input.addEventListener("click", e => {
+            input.addEventListener("focus", e => {
                 // console.log(e);
                 const parentEl = e.target.offsetParent;
                 if(e.target.value === "") {
@@ -87,4 +87,46 @@ d.addEventListener("DOMContentLoaded", e => {
     headerObserver();
     heroUpdate();
     focusInput();
+});
+
+const $programsContainer = d.querySelector(".wrap");
+const $modal = d.querySelector(".program__modal");
+
+$programsContainer.addEventListener("click", e => {
+    // console.log(e);
+    e.preventDefault();
+
+    const $modalToggle = e.target.closest(".program__link");
+    // console.log($modalToggle);
+    if(!$modalToggle) return;
+
+    const $modal = $modalToggle.parentNode.nextElementSibling;
+    const $modalCloseBtn = $modal.querySelector(".modal__close")
+
+    const modalOpen = () => {
+        $modal.classList.add("is-active");
+        $modal.style.animation = 'modalIn 500ms forwards';
+        d.body.style.overflowY = 'hidden';
+    }
+
+    const modalClose = () => {
+        $modal.classList.remove("is-active");
+        $modal.removeEventListener("animationend", modalClose);
+    }
+
+    $modalCloseBtn.addEventListener("click", e => {
+        $modal.style.animation = 'modalOut 500ms forwards';
+        $modal.addEventListener("animationend", modalClose);
+        d.body.style.overflowY = 'scroll';
+    });
+
+    d.addEventListener("keydown", e => {
+        if(e.keyCode === 27) {
+            $modal.classList.remove("is-active");
+            $modal.removeEventListener("animationend", modalClose);
+            d.body.style.overflowY = 'scroll';
+        }
+    });
+
+    modalOpen();
 });
