@@ -2,6 +2,7 @@ const d = document;
 
 
 const $header = d.querySelector("header");
+const $homeIntro = d.querySelector(".home-intro");
 const $heroText = d.querySelector(".hero__text");
 const $heroImage = d.querySelector(".hero__img");
 const path = location.pathname;
@@ -35,20 +36,22 @@ function headerObserver() {
 
 /* Banner Changer */
 
-if(path !== "/") {
+if(path !== "/" || path !== "/index.html") {
     function heroUpdate() {
         if(page === "/acerca") {
             $heroImage.src = "assets/img/about.jpg";
-            $heroImage.alt = "banner";
+            $heroImage.alt = "Altea Historia";
             $heroText.style.display = "none";
             $heroImage.style.height = "50vh";
-            $heroImage.style.objectFit = "cover";
+            $heroImage.style.padding = "0";
+            $homeIntro.style.height = "auto";
         } else if(page === "/contacto") {
             $heroImage.src = "assets/img/contact.jpg";
-            $heroImage.alt = "banner";
+            $heroImage.alt = "Altea Contacto";
             $heroText.style.display = "none";
             $heroImage.style.height = "50vh";
-            $heroImage.style.objectFit = "cover";
+            $heroImage.style.padding = "0";
+            $homeIntro.style.height = "auto";
         } else {
             return
         }
@@ -89,12 +92,14 @@ d.addEventListener("DOMContentLoaded", e => {
     focusInput();
 });
 
+/* Modal */
+
 const $programsContainer = d.querySelector(".wrap");
 const $modal = d.querySelector(".program__modal");
 
 $programsContainer.addEventListener("click", e => {
     // console.log(e);
-    e.preventDefault();
+    // e.preventDefault();
 
     const $modalToggle = e.target.closest(".program__link");
     // console.log($modalToggle);
@@ -130,3 +135,4 @@ $programsContainer.addEventListener("click", e => {
 
     modalOpen();
 });
+

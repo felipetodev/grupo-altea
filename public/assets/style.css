@@ -88,10 +88,11 @@ header {
 }
 
 .nav__link {
-    text-decoration: none;
-    color: inherit;
     position: relative;
+    text-decoration: none;
     text-transform: uppercase;
+    text-shadow: 1px 1px 1px #1b1835de;
+    color: inherit;
     font-size: 0.8rem;
     padding: 5px 0;
 }
@@ -213,7 +214,7 @@ header {
 /* SECCION PROGRAMAS */
 
 .wrap {
-    margin-top: 10rem;
+    margin-top: 8rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
@@ -259,16 +260,20 @@ header {
 .program__title {
     padding: 1rem 0rem;
     font-size: 2rem;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .program__link {
     align-self: flex-end;
     color: #fff;
     font-weight: 600;
-    text-decoration: none;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: none;
     border-bottom: 3px solid #fff;
     padding: 0.2rem 0rem;
+    cursor: pointer;
     transition: all 300ms ease;
 }
 
@@ -308,8 +313,8 @@ header {
     border: 0;
     width: 2.5rem;
     height: 2.5rem;
-    /* padding: 4px 0 0; */
     border-radius: 50%;
+    font-size: 1.25rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     z-index: 9999;
@@ -410,6 +415,15 @@ header {
     font-size: 0.85rem;
 }
 
+.inspiration__text:nth-last-child(1) {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    background-image: url(/assets/img/social/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 70px;
+    background-position: 0% top;
+}
+
 /* AREAS SERVICIOS */
 
 .wrap-services {
@@ -425,7 +439,7 @@ header {
 }
 
 .services__title {
-    margin-top: 10rem;
+    margin-top: 8rem;
     position: relative;
     padding-bottom: 1.25rem; /* revisar */
     font-size: 2rem;
@@ -690,7 +704,7 @@ figure.our__alliance:hover p {
 }
 
 .about__us h2:first-child {
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 span {
@@ -708,6 +722,15 @@ span {
 }
 
 /* Contacto */
+
+.wrap-services:nth-child(1) {
+    margin-top: 8rem;
+}
+
+.contact__info {
+    margin: 1rem 0;
+    font-size: 0.85rem;
+}
 
 .form__container {
     position: relative;
@@ -831,36 +854,48 @@ textarea.input {
     display: block;
 }
 
+/*Responsive Tablet*/
+
 @media only screen and (max-width: 768px) {
+    header {
+        background: #1b1835b0;
+    }
+
     .contact__us {
         display: none;
     }
 
-    .hero__img {
-        height: 100vh;
-    }
-
     .hero__text {
-        right: 35%;
-        top: 20%;
+        width: 70%;
+        right: 24%;
     }
 
     .hero__description {
-        width: 100%;
+        width: 26rem;
+    }
+
+    .program__title {
+        display: none;
+    }
+
+    .program__item figcaption {
+        top: 0;
+        background: transparent;
+        justify-content: flex-end;
     }
 
     .program__modal {
-        top: 6rem;
-        bottom: 1.5rem;
-        left: 1.5rem;
-        right: 1.5rem;
+        top: 7.5rem;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
     }
 
     .modal__close {
-        background: #fff;
+        background: var(--color-accent);
         position: fixed;
-        left: 0.5rem;
-        top: 5.5rem;
+        left: 1.5rem;
+        top: 8rem;
     }
 
     .modal__pull-left {
@@ -875,9 +910,16 @@ textarea.input {
     }
 
     .wrap,
-    .wrap-services,
-    .wrap-ourvalue {
+    .wrap-services {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .wrap-services {
+        grid-gap: unset;
+    }
+
+    .wrap-ourvalue {
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .form {
@@ -890,15 +932,15 @@ textarea.input {
         right: 70px;
     }
 
-    .google__maps {
-        height: 400px;
-    }
-
     .input__container label,
     .input__container.textarea label {
         top: 0;
         left: 0;
         transform: translateY(-74%);
+    }
+
+    .google__maps {
+        height: 400px;
     }
 
     .footer {
@@ -934,5 +976,70 @@ textarea.input {
 
     .footer__icon {
         padding: 1rem 0rem;
+    }
+}
+
+/*Responsive Mobile*/
+
+@media only screen and (max-width: 576px) {
+    header {
+        flex-direction: column;
+        padding: 0.5rem 0rem;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .nav__list {
+        margin: auto;
+        align-self: center;
+    }
+
+    .nav__link {
+        margin-top: 10px;
+    }
+
+    .home-intro {
+        height: 100vh;
+    }
+
+    .hero__img {
+        height: 70vh;
+        padding-top: 6rem;
+    }
+
+    .hero__text {
+        width: 90%;
+        right: 5%;
+        top: 26%;
+    }
+
+    .hero__title {
+        font-size: 3.3rem;
+        margin-bottom: 3rem;
+    }
+
+    .hero__description {
+        font-size: 1rem;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+
+    .program__modal {
+        top: 7rem;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .modal__close {
+        font-size: 1rem;
+        left: 1rem;
+        top: 7.5rem;
+    }
+    
+    .modal__title {
+        font-size: 1.8rem;
     }
 }
