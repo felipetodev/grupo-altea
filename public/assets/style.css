@@ -1,10 +1,10 @@
 :root {
     --color-primary: #1b1835;
+    --color-secondary: #1B1831;
     --color-accent: #f2835e;
-    --color-secondary: #ffff;
 
-    --ff-title: "BFNarrow", sans-serif;
-    --ff-serif: "Crimson Text", serif;
+    --ff-title: 'Open Sans', sans-serif;
+    --ff-serif: 'Open Sans', sans-serif;
 }
 
 *,
@@ -38,7 +38,8 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-secondary);
 }
 
 .wrap,
@@ -139,7 +140,7 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     background-color: #fff;
-    color: #1b1831;
+    color: var(--color-secondary);
     padding: 0.6rem 0.9rem;
     font-size: 0.6rem;
     font-weight: 600;
@@ -297,8 +298,25 @@ header {
     box-shadow: 0 0 0 10rem rgba(0, 0, 0, 0.5);
     overflow-y: scroll;
     overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
 
     display: none;
+}
+
+.program__modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.program__modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.program__modal::-webkit-scrollbar-thumb {
+    background: transparent;
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 20px;
+    border: transparent;
 }
 
 .program__modal.is-active {
@@ -492,8 +510,6 @@ header {
 
 .grid figure figcaption {
 	padding: 2em;
-	color: var(--color-primary);
-	/* text-transform: uppercase; */
 	font-size: 1.25em;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -588,8 +604,8 @@ figure.our__alliance:hover p {
 /* FOOTER */
 
 .footer {
-    background-color: #2d314d;
-    color: white;
+    background-color: var(--color-primary);
+    color: #fff;
     font-size: 0.75rem;
     padding-top: 2rem;
     padding-bottom: 4rem;
@@ -607,10 +623,6 @@ figure.our__alliance:hover p {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.footer a {
-    color: white;  /*** SACAR ***/
 }
 
 .footer__logo {
@@ -800,6 +812,7 @@ textarea.input {
     resize: none;
     overflow-y: auto;
     font-size: 0.8rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .input__container label {
@@ -922,6 +935,13 @@ textarea.input {
         grid-template-columns: repeat(2, 1fr); 
     }
 
+    .about__challenge p:nth-child(3),
+    .about__challenge p:nth-child(5) {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .form {
         grid-template-columns: 1fr;
     }
@@ -1009,14 +1029,32 @@ textarea.input {
         padding-top: 6rem;
     }
 
-    .hero__text {
+    /* .hero__text {
         width: 90%;
         right: 5%;
         top: 26%;
+    } */
+
+    .hero__text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        top: 25%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 90%;
+        color: #fff;
+        text-align: start;
+        animation: drop 3s ease;
     }
 
     .hero__title {
-        font-size: 3.3rem;
+        line-height: 1;
+        font-size: 3rem;
         margin-bottom: 3rem;
     }
 
