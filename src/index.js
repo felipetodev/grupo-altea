@@ -38,7 +38,7 @@ function headerObserver() {
 
 if(path !== "/" || path !== "/index.html") {
     function heroUpdate() {
-        if(page === "/acerca") {
+        if(page === "/somos") {
             $heroImage.src = "assets/img/about.jpg";
             $heroImage.alt = "Altea Historia";
             $heroText.style.display = "none";
@@ -94,7 +94,7 @@ d.addEventListener("DOMContentLoaded", e => {
 
 /* Modal */
 
-const $programsContainer = d.querySelector(".wrap");
+const $programsContainer = d.querySelector(".wrap-services");
 const $modal = d.querySelector(".program__modal");
 
 $programsContainer.addEventListener("click", e => {
