@@ -2,12 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/4d04fcac38.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Grupo Altea</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/4d04fcac38.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<title>Grupo Altea | Inicio</title>
+<meta name="description" content="Grupo Altea | Consultoría de Recursos Humanos">
+<link rel="canonical" href="https://grupoaltea.cl/#servicios">
+<link rel="favicon" href="https://grupoaltea.cl/assets/img/favicon/favicon_altea_32x32.png">
+<link rel="apple-touch-icon" href="https://grupoaltea.cl/assets/img/favicon/favicon_altea_32x32.png">
+<meta name="theme-color" content="#f2835e">
+<meta name="twitter:card" content="summary">
+<meta property="og:type" content="website">
+<meta property="og:title" name="twitter:title" content="Grupo Altea">
+<meta property="og:description" name="twitter:description" content="Grupo Altea | Consultoría de Recursos Humanos">
+<meta property="og:image" name="twitter:image" content="https://grupoaltea.cl/assets/img/hero_altea_.jpg">
+<meta property="og:url" name="twitter:url" content="https://grupoaltea.cl/">
 </head>
 <body>
     <header>
@@ -17,7 +28,7 @@
     <nav class="nav__list">
         <a class="nav__link" href="index.html">Inicio</a>
         <a class="nav__link" href="somos.html">Somos</a>
-        <a class="nav__link" href="servicios.html">Servicios</a>
+        <a class="nav__link" href="/#servicios">Servicios</a>
         <a class="nav__link" href="contacto.html">Contacto</a>
     </nav>
     <div class="contact__us">
@@ -53,19 +64,19 @@
                         </div>
                     </div>
                     <div class="modal__content">
-                        <p>Entregar espacios de contención psicológica a los colaboradores en tiempos de pandemia, se vuelve fundamental en la prevención de enfermedades mentales y sus posibles secuelas.</p>
-                        <img class="modal__full-width" src="https://images.pexels.com/photos/3970327/pexels-photo-3970327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
+                        <p>Entregar espacios de contención psicológica a los colaboradores en tiempos de pandemia para la prevención de enfermedades mentales y sus posibles secuelas.</p>
+                        <img class="modal__full-width" src="/assets/img/modal01-1.jpg" alt=""/>
                         <p>El presente programa se enfoca en entregar una intervención temprana, a personas que se encuentren expuestas a situaciones que impliquen altos niveles de estrés, entregando herramientas de autogestión y manejo de crisis.</p>
-                        <img class="modal__pull-left" src="https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
+                        <img class="modal__pull-left" src="/assets/img/modal01-2.jpg" alt=""/>
                         <h3>Objetivos del Programa:</h3>
                         <ul>
-                            <li>Evaluar y disminuir el impacto de la pandemia sanitaria en la salud mental de los colaboradores de la organización.</li>
+                            <li>Mitigar los efectos psicológicos individuales y grupales de situaciones de riesgo que afectan el contexto social, como por ejemplo la pandemia o el estallido social.</li>
                             <li>Prevenir los efectos en la salud mental, disminuyendo la tasa de bajas laborales gracias a la intervención rápida y eficaz a las dificultades psicológicas de los colaboradores.</li>
                             <li>Promover el bienestar psicosocial en los colaboradores, generando espacios de contención emocional.</li>
                             <li>Dar apoyo directo en salud mental a personas en situación de mayor riesgo.</li>
                             <li>Reducir el impacto en la productividad de los trabajadores, a través de una cultura de cuidado mutuo entre los colaboradores y la organización.</li>
                         </ul>
-                        <img class="modal__pull-right" src="https://images.pexels.com/photos/4031818/pexels-photo-4031818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
+                        <img class="modal__pull-right" src="/assets/img/modal01-3.jpg" alt=""/>
                         <hr>
                         <h3>Dirigido a:</h3>
                         <p>Organizaciones e instituciones y sus colaboradores.</p>
@@ -75,10 +86,15 @@
                             <li>Atención telefónica</li>
                         </ul>
                         <p>¿Tienes alguna duda con respecto a este programa? <strong>Escribenos para que te contactemos.</strong></p>
-                        <form class="modal__form">
-                            <input class="modal__input" type="text" placeholder="Ingresa un correo" required />
+                        <form class="contact-form">
+                            <input class="modal__input" type="hidden" name="Nombre" value="Contactame 👇" placeholder="Nombre">
+                            <label class="modal__label" for="email">Saber más de este programa</label>
+                            <input class="modal__input" type="email" name="Email" placeholder="Ingresa un correo" required />
                             <input type="hidden" name="_subject" value="Programa Contención Emocional">
                             <button class="modal__button" type="submit"><i class="fas fa-paper-plane"></i></button>
+                            <div class="contact-form-loader none">
+                                <img src="/assets/img/loader.svg" alt="Enviando...">
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -104,16 +120,9 @@
                         </div>
                     </div>
                     <div class="modal__content">
-                        <p>Reconocer las crisis y saber actuar frente a ellas, desencadena una serie de eventos que pueden resultar favorables para el desarrollo personal y de la organización. Si logramos concebir dichas crisis como una oportunidad, abrimos las puertas al crecimiento y a la evolución de nuestros líderes y colaboradores.</p>
-                        <img class="modal__full-width" src="https://images.pexels.com/photos/7075/people-office-group-team.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
-                        <p>Tenemos la capacidad de trascender las adversidades de manera consciente. Si reconocemos nuestro poder personal y nos hacemos responsables de nuestro bienestar individual, podemos lograr influir positivamente en el bienestar del grupo.</p>
-                        <img class="modal__pull-left" src="https://images.pexels.com/photos/3931562/pexels-photo-3931562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
-                        <p>El programa busca entregar un espacio de gestión emocional de la crisis, a través del desarrollo de la capacidad de resiliencia, logrando percibir la crisis como una oportunidad de desarrollo y crecimiento.</p>
-                        <ul>
-                            <li>Servicio dirigido a personas.</li>
-                            <li>Capacitaciones a colaboradores, jefaturas, supervisores y líderes de la organización</li>
-                        </ul>
-                        <!-- <img class="modal__pull-right" src="https://images.pexels.com/photos/4049960/pexels-photo-4049960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/> -->
+                        <p>Como individuos y como colectivos con una identidad organizacional en común, tenemos la capacidad de trascender las adversidades de manera consciente, si reconocemos nuestro poder personal y nos hacemos responsables de nuestro bienestar individual, podemos lograr influir positivamente en el bienestar del grupo.</p>
+                        <img class="modal__pull-left" src="/assets/img/modal02-1.jpg" alt=""/>
+                        <p>Capacitaciones a colaboradores, jefaturas, supervisores y líderes de la organización.</p>
                     </div>
                 </div>
             </div>
@@ -124,41 +133,20 @@
             <div class="program__item">
                 <img class="program__img" src="assets/img/resistencia_org.jpg" alt="Contención Emocional">
                 <figcaption>
-                    <h3 class="program__title">Talleres y charlas</h3>
+                    <h3 class="program__title">Capacitaciones</h3>
                     <!-- <button class="program__link">Más Información</button> -->
                 </figcaption>
-                <!-- <div class="program__modal">
-                    <button class="modal__close">
-                        <div class="icon fas fa-times"></div>
-                    </button>
-                    <div class="modal__header header-two">
-                        <div class="modal__title-box">
-                            <h2 class="modal__title">Talleres y charlas</h2>
-                            <p class="modal__subtitle">Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div class="modal__content">
-                        <p>Reconocer las crisis y saber actuar frente a ellas, desencadena una serie de eventos que pueden resultar favorables para el desarrollo personal y de la organización. Si logramos concebir dichas crisis como una oportunidad, abrimos las puertas al crecimiento y a la evolución de nuestros líderes y colaboradores.</p>
-                        <img class="modal__full-width" src="https://images.pexels.com/photos/7075/people-office-group-team.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
-                        <p>Tenemos la capacidad de trascender las adversidades de manera consciente. Si reconocemos nuestro poder personal y nos hacemos responsables de nuestro bienestar individual, podemos lograr influir positivamente en el bienestar del grupo.</p>
-                        <img class="modal__pull-left" src="https://images.pexels.com/photos/3931562/pexels-photo-3931562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
-                        <p>El programa busca entregar un espacio de gestión emocional de la crisis, a través del desarrollo de la capacidad de resiliencia, logrando percibir la crisis como una oportunidad de desarrollo y crecimiento.</p>
-                        <ul>
-                            <li>Servicio dirigido a personas.</li>
-                            <li>Capacitaciones a colaboradores, jefaturas, supervisores y líderes de la organización</li>
-                        </ul>
-                        <img class="modal__pull-right" src="https://images.pexels.com/photos/4049960/pexels-photo-4049960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
-                    </div>
-                </div> -->
             </div>
-            <h3 class="card__title">Talleres y charlas</h3>
-            <p class="card__description">Realizamos talleres y charlas de acuerdo a los requerimientos de tu organización. Temáticas como Primeros Auxilios Psicológicos, Herramientas de Mindfulness para Organizaciones, Adaptación y repercusión emocional.</p>
+            <h3 class="card__title">Capacitaciones</h3>
+            <p class="card__description">Capacitaciones personalizadas a los requerimientos de tu organización, en temáticas de nuestra expertise.</p>
         </div>
     </div>
 </section>
-    <section>
+    <section class="inspiration">
     <div class="wrap">
-        <img class="inspiration__img" src="assets/img/inspiracion.jpg" alt="Equipo Altea">
+        <div class="inspiration-container">
+            <img class="inspiration__img" src="/assets/img/team/our-team.jpg" alt="Equipo Altea">
+        </div>
         <div class="inspiration__desc">
             <h3 class="inspiration__title">Nuestra inspiración</h3>
             <p class="inspiration__text">Creemos profundamente en el rol que cumplen las organizaciones ante los desafíos globales que enfrenta la humanidad, los cuales, nos invitan a liderar desde una mirada integrativa, consciente y abierta a los distintos sucesos.</p>
@@ -166,36 +154,39 @@
         </div>
     </div>
 </section>
-    <section>
-    <h2 class="services__title">Nuestras áreas de servicios</h2>
-    <div class="wrap-services">
-        <div class="services__card">
-            <img class="services__img" src="assets/img/capacitaciones.png" alt="">
-            <div class="services__info">
-                <h3 class="service__title">
-                    Altea Capacitaciones
-                </h3>
-                <p class="services__desc">Servicios de Capacitación a personas y organizaciones.</p>
-            </div>
+    <section id="servicios">
+    <div class="services__container">
+        <div class="services__bigimg">
+            <h2 class="services__maintitle">Nuestras áreas de servicios</h2>
         </div>
-        <div class="services__card">
-            <img class="services__img" src="assets/img/consultoria.png" alt="">
-            <div class="services__info">
-                <h3 class="service__title">Altea Consultoría</h3>
-                <p class="services__desc">Asesorías personalizadas en temáticas de nuestra expertise.</p>
+        <div class="square">
+            <div class="square-container-1">
+                <div class="square1 square-container">
+                </div>
+                <div class="square2 square-container">
+                    <h3 class="square__title">Altea Capacitaciones</h3>
+                    <p class="square__text">Servicios de Capacitación a personas y organizaciones.</p>
+                    <p class="square__option"><i class="fas fa-angle-right"></i> Relatorias y talleres empresas</p>
+                </div>
             </div>
-        </div>
-        <div class="services__card">
-            <img class="services__img" src="assets/img/personas.png" alt="">
-            <div class="services__info">
-                <h3 class="service__title">Altea Personas</h3>
-                <p class="services__desc">Servicios de atención psicológica individual.</p>
+            <div class="square-container-2">
+                <div class="square3 square-container">
+                    <h3 class="square__title">Altea Consultoría</h3>
+                    <p class="square__text">Asesorías personalizadas en temáticas de nuestra expertise.</p>
+                    <p class="square__option"><i class="fas fa-angle-right"></i> Programa contención emocional COVID</p>
+                    <p class="square__option"><i class="fas fa-angle-right"></i> Programa resiliencia organizacional</p>
+                </div>
+                <div class="square4 square-container">
+                    <h3 class="square__title">Altea Personas</h3>
+                    <p class="square__text">Servicios de atención psicológica para empresas.</p>
+                    <p class="square__option"><i class="fas fa-angle-right"></i> Atención clínica particular</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-    <section>
-    <h2 class="services__title">Nuestros Valores</h2>
+    <section class="values">
+    <h2 class="services__title values__title">Nuestros Valores</h2>
     <div class="wrap-ourvalue">
         <div class="our__value">
             <i class="icon__value fab fa-pagelines"></i>
@@ -215,28 +206,28 @@
         </div>
     </div>
 </section>
-    <section>
-    <div class="wrap">
-        <div class="grid">
-            <figure class="our__alliance">
-                <img src="assets/img/alianzas_clientes.jpg" alt="img06"/>
-                <figcaption>
-                    <h2>Alianzas y Clientes</h2>
-                    <p>Lorem ipsum dolor sit.</p>
-                    <a href="#"></a>
-                </figcaption>			
-            </figure>
+    <section class="testimonials">
+    <div class="slider">
+        <h2 class="slider-header">Lo que opinan de nuestros programas</h2>
+        <div class="slider-slides">
+            <div class="slider-slide active">
+                <h3 class="slider-title">"Lo que más valoro del servicio de Altea es la personalización, seriedad y ganas de trabajar de todo el equipo de Grupo Altea. Destacan por su eficacia, confidencialidad, compromiso y profesionalidad."</h3>
+                <img class="slider-img" src="https://unsplash.it/70" alt="">
+                <p class="slider-author">Consuelo Lastra</p>
+                <p class="slider-desc">Jefe departamento Falabella</p>
+            </div>
+            <div class="slider-slide">
+                <h3 class="slider-title">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem sunt voluptatibus quisquam ipsam, neque vel deserunt temporibus ab quae nesciunt atque accusamus maxime impedit."</h3>
+                <img class="slider-img" src="https://unsplash.it/70" alt="">
+                <p class="slider-author">Benjamin Bunster</p>
+                <p class="slider-desc">Jefe departamento Copec</p>
+            </div>
+            <div class="slider-btns">
+                <a><i class="prev fas fa-chevron-left"></i></a>
+                <a><i class="next fas fa-chevron-right"></i></a>
+            </div>
         </div>
-        <div class="grid">
-            <figure class="our__alliance">
-                <img src="assets/img/alianzas_clientes.jpg" alt="img06"/>
-                <figcaption>
-                    <h2>Alianzas y Clientes</h2>
-                    <p>Lorem ipsum dolor sit.</p>
-                    <a href="#"></a>
-                </figcaption>			
-            </figure>
-        </div>
+        <div class="slider-bgs"></div>
     </div>
 </section>
     <footer class="footer">
