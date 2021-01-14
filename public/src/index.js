@@ -30,6 +30,47 @@ function headerObserver() {
     } else {
         observer.observe($heroImage);
     }
+
+    const $scale = document.querySelectorAll('.scale-in');
+    const $fadeIn = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: [0.3, 0.75],
+    };
+
+    const scaleOnScroll = new IntersectionObserver(function(
+        entries, scaleOnScroll
+    ) {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("is-active");
+                scaleOnScroll.unobserve(entry.target);
+            }
+        })
+    }, appearOptions);
+
+    const appearOnScroll = new IntersectionObserver(function(
+        entries, appearOnScroll
+    ) {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("is-active");
+                appearOnScroll.unobserve(entry.target);
+            }
+        })
+    }, appearOptions);
+
+    $scale.forEach(scale => {
+        scaleOnScroll.observe(scale);
+    });
+
+    $fadeIn.forEach(scale => {
+        appearOnScroll.observe(scale);
+    });
 }
 
 
