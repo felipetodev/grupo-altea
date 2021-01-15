@@ -65,9 +65,9 @@
                     </div>
                     <div class="modal__content">
                         <p>Entregar espacios de contención psicológica a los colaboradores en tiempos de pandemia para la prevención de enfermedades mentales y sus posibles secuelas.</p>
-                        <img class="modal__full-width" src="/assets/img/modal01-1.jpg" alt=""/>
+                        <img class="modal__full-width" src="/assets/img/modal01-1.webp" alt=""/>
                         <p>El presente programa se enfoca en entregar una intervención temprana, a personas que se encuentren expuestas a situaciones que impliquen altos niveles de estrés, entregando herramientas de autogestión y manejo de crisis.</p>
-                        <img class="modal__pull-left" src="/assets/img/modal01-2.jpg" alt=""/>
+                        <img class="modal__pull-left" src="/assets/img/modal01-2.webp" alt=""/>
                         <h3>Objetivos del Programa:</h3>
                         <ul>
                             <li>Mitigar los efectos psicológicos individuales y grupales de situaciones de riesgo que afectan el contexto social, como por ejemplo la pandemia o el estallido social.</li>
@@ -76,7 +76,7 @@
                             <li>Dar apoyo directo en salud mental a personas en situación de mayor riesgo.</li>
                             <li>Reducir el impacto en la productividad de los trabajadores, a través de una cultura de cuidado mutuo entre los colaboradores y la organización.</li>
                         </ul>
-                        <img class="modal__pull-right" src="/assets/img/modal01-3.jpg" alt=""/>
+                        <img class="modal__pull-right" src="/assets/img/modal01-3.webp" alt=""/>
                         <hr>
                         <h3>Dirigido a:</h3>
                         <p>Organizaciones e instituciones y sus colaboradores.</p>
@@ -86,12 +86,21 @@
                             <li>Atención telefónica</li>
                         </ul>
                         <p>¿Tienes alguna duda con respecto a este programa? <strong>Escribenos para que te contactemos.</strong></p>
-                        <form class="contact-form">
-                            <input class="modal__input" type="hidden" name="Nombre" value="Contactame 👇" placeholder="Nombre">
-                            <label class="modal__label" for="email">Saber más de este programa</label>
-                            <input class="modal__input" type="email" name="Email" placeholder="Ingresa un correo" required />
+                        <form class="contact-form modal-form">
                             <input type="hidden" name="_subject" value="Programa Contención Emocional">
-                            <button class="modal__button" type="submit"><i class="fas fa-paper-plane"></i></button>
+                            <div class="input-container">
+                                <input class="modal__input" type="text" name="Nombre" autocomplete="off" required />
+                                <label for="Nombre" class="label-name">
+                                    <span class="content-name">Nombre</span>
+                                </label>
+                            </div>
+                            <div class="input-container">
+                                <input class="modal__input" type="email" name="Email" autocomplete="off" required />
+                                <label for="Email" class="label-name">
+                                    <span class="content-name">Email</span>
+                                </label>
+                            </div>
+                            <button class="modal-form-btn" type="submit">Enviar <i class="fas fa-paper-plane"></i></button>
                             <div class="contact-form-loader none">
                                 <img src="/assets/img/loader.svg" alt="Enviando...">
                             </div>
@@ -121,7 +130,7 @@
                     </div>
                     <div class="modal__content">
                         <p>Como individuos y como colectivos con una identidad organizacional en común, tenemos la capacidad de trascender las adversidades de manera consciente, si reconocemos nuestro poder personal y nos hacemos responsables de nuestro bienestar individual, podemos lograr influir positivamente en el bienestar del grupo.</p>
-                        <img class="modal__pull-left" src="/assets/img/modal02-1.jpg" alt=""/>
+                        <img class="modal__pull-left" src="/assets/img/modal02-1.webp" alt=""/>
                         <p>Capacitaciones a colaboradores, jefaturas, supervisores y líderes de la organización.</p>
                     </div>
                 </div>
@@ -145,7 +154,7 @@
     <section class="inspiration">
     <div class="wrap">
         <div class="inspiration-container">
-            <img class="inspiration__img scale-in" src="/assets/img/team/team-meeting.jpg" alt="Equipo Altea">
+            <img class="inspiration__img scale-in" src="/assets/img/team/team-meeting.webp" alt="Equipo Altea">
         </div>
         <div class="inspiration__desc">
             <h3 class="inspiration__title">Nuestra inspiración</h3>
@@ -164,6 +173,9 @@
                 <div class="square1 square-container fade-in">
                 </div>
                 <div class="square2 square-container fade-in">
+                    <div class="static">
+                        <h3 class="square__title">Altea Capacitaciones</h3>
+                    </div>
                     <h3 class="square__title">Altea Capacitaciones</h3>
                     <p class="square__text">Servicios de Capacitación a personas y organizaciones.</p>
                     <p class="square__option"><i class="fas fa-angle-right"></i> Relatorias y talleres empresas</p>
@@ -171,12 +183,18 @@
             </div>
             <div class="square-container-2">
                 <div class="square3 square-container fade-in">
+                    <div class="static">
+                        <h3 class="square__title">Altea Consultoría</h3>
+                    </div>
                     <h3 class="square__title">Altea Consultoría</h3>
                     <p class="square__text">Asesorías personalizadas en temáticas de nuestra expertise.</p>
                     <p class="square__option"><i class="fas fa-angle-right"></i> Programa contención emocional COVID</p>
                     <p class="square__option"><i class="fas fa-angle-right"></i> Programa resiliencia organizacional</p>
                 </div>
                 <div class="square4 square-container fade-in">
+                    <div class="static personas">
+                        <h3 class="square__title">Altea Personas</h3>
+                    </div>
                     <h3 class="square__title">Altea Personas</h3>
                     <p class="square__text">Servicios de atención psicológica para empresas.</p>
                     <p class="square__option"><i class="fas fa-angle-right"></i> Atención clínica particular</p>
@@ -212,14 +230,14 @@
         <div class="slider-slides">
             <div class="slider-slide active">
                 <h3 class="slider-title">"Lo que más valoro del servicio de Altea es la personalización, seriedad y ganas de trabajar de todo el equipo de Grupo Altea. Destacan por su eficacia, confidencialidad, compromiso y profesionalidad."</h3>
-                <img class="slider-img" src="https://unsplash.it/70" alt="">
+                <img class="slider-img" src="/assets/img/team/consuelo.webp" alt="Clientes">
                 <p class="slider-author">Consuelo Lastra</p>
                 <p class="slider-desc">Jefe departamento Falabella</p>
             </div>
             <div class="slider-slide">
                 <h3 class="slider-title">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem sunt voluptatibus quisquam ipsam, neque vel deserunt temporibus ab quae nesciunt atque accusamus maxime impedit."</h3>
-                <img class="slider-img" src="https://unsplash.it/70" alt="">
-                <p class="slider-author">Benjamin Bunster</p>
+                <img class="slider-img" src="/assets/img/team/varinnia.webp" alt="Clientes">
+                <p class="slider-author">Francisca Pizarro</p>
                 <p class="slider-desc">Jefe departamento Copec</p>
             </div>
             <div class="slider-btns">

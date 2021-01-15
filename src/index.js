@@ -22,7 +22,7 @@ function headerObserver() {
     }
 
     const observer = new IntersectionObserver(cb, {
-        rootMargin: "-250px 0px 0px 0px"
+        rootMargin: "-320px 0px 0px 0px"
     });
 
     if(page === "/index" || path === "/") {
@@ -256,6 +256,7 @@ if(d.querySelector('.contact-form')) {
         const $form = d.querySelector('.contact-form');
         const $loader = d.querySelector('.contact-form-loader');
         const $response = d.querySelector('.form-modal');
+        const $modalRes = d.querySelector('.modal-form-btn');
 
         $form.addEventListener("submit", e => {
             e.preventDefault();
@@ -268,6 +269,7 @@ if(d.querySelector('.contact-form')) {
             .then(res => res.ok ? res.json() : Promise.reject(res))
             .then(json => {
                 console.log(json);
+                $modalRes ? $modalRes.innerHTML = `¡Mensaje enviado! <i class="fas fa-check"></i>` : null;
                 $response ? $response.classList.remove('none') : null;
                 $form.reset();
             })
@@ -276,6 +278,7 @@ if(d.querySelector('.contact-form')) {
                 console.log(message);
             })
             .finally(() => {
+                $modalRes ? $modalRes.disabled = true : null;
                 $loader.classList.add('none');
                 setTimeout(() => {
                     $response ? $response.classList.add('none') : null;
@@ -285,5 +288,5 @@ if(d.querySelector('.contact-form')) {
         });
     }
 
-    form()
+    form();
 }
