@@ -1,3 +1,39 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+    src:
+        local('Open Sans'),
+        url('/assets/fonts/OpenSans-Light-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-style: normal;
+    src:
+        local('Open Sans'), 
+        url('/assets/fonts/OpenSans-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-style: normal;
+    src:
+        local('Open Sans'), 
+        url('/assets/fonts/OpenSans-Semibold-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-style: normal;
+    src:
+        local('Open Sans'),
+        url('/assets/fonts/OpenSans-Bold-webfont.woff') format('woff');
+}
+
 :root {
     --color-primary: #1b1835;
     --color-secondary: #1B1831;
@@ -194,7 +230,7 @@ header {
     box-shadow: 0 3px 20px rgba(black, 0.2);
 }
 
-/* Hero */
+/* Hero Section */
 
 .hero__img {
     display: block;
@@ -211,7 +247,7 @@ header {
 .hero__text {
     position: absolute;
     width: 60%;
-    top: 35%;
+    top: 30%;
     right: 30%;
     color: white;
     text-align: start;
@@ -227,10 +263,12 @@ header {
 
 .hero__description {
     width: 30rem;
+    font-size: 1.15rem;
+    font-weight: normal;
     text-shadow: 1px 1px #1b1835ab;
 }
 
-/* SECCION PROGRAMAS */
+/* Programs Section */
 
 .wrap-services {
     display: grid;
@@ -239,7 +277,6 @@ header {
 }
 
 .wrap {
-    /* margin-top: 8rem; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
@@ -283,7 +320,6 @@ header {
 }
 
 .program__title {
-    /* padding: 1rem 0rem; */
     font-size: 1rem;
     align-self: flex-start;
 }
@@ -437,7 +473,8 @@ header {
     margin-left: 2rem;
 }
 
-/* Modal form */
+/* Modal Form Component */
+
 .modal-form {
     padding: 0;
     width: 280px;
@@ -455,7 +492,7 @@ header {
     height: 100%;
     width: 100%;
     font-size: inherit;
-    padding-top: 1.5rem;
+    padding-top: 1.4rem;
     border: none;
     outline: none;
 }
@@ -520,6 +557,10 @@ header {
     border-bottom: 2px solid;
 }
 
+.modal-form-btn:disabled {
+    color: var(--color-accent);
+}
+
 .modal-form-btn i {
     font-size: 1rem;
 }
@@ -541,7 +582,7 @@ header {
     }
 }
 
-/* INSPIRACION */
+/* Inspiration Section */
 
 .inspiration {
     background-color: #fafafa;
@@ -587,7 +628,7 @@ header {
     background-position: 0% top;
 }
 
-/* AREAS SERVICIOS */
+/* Services Areas */
 
 .services__container {
     display: grid;
@@ -679,6 +720,12 @@ header {
     transition: all 300ms ease-in;
 }
 
+.static i, .static span {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
 .square-container:hover .static {
     visibility: hidden;
     opacity: 0;
@@ -728,7 +775,7 @@ header {
     }
 }
 
-/* NUESTRO VALOR */
+/* Our Value Section */
 
 .values {
     background: #fafafa;
@@ -767,7 +814,7 @@ header {
     padding: 2rem;
 }
 
-/* FOOTER */
+/* Footer Section */
 
 .footer {
     background-color: var(--color-primary);
@@ -857,7 +904,7 @@ header {
     grid-area: links2;
 }
 
-/* Acerca De */
+/* Abous Us Section */
 
 .wrap-about {
     width: min(1063px, 90%);
@@ -1050,20 +1097,18 @@ span {
     }
 }
 
-/* Testimonials */
+/* Testimonials Section */
 
 .slider-header {
     display: inline-flex;
     position: inherit;
     z-index: 1;
     background: #1b183586;
-    font-weight: 600;
     font-size: clamp(1.5rem, 2.5vw, 2rem); 
     color: white;
     margin-top: 2rem;
     padding: 10px;
     border-radius: 10px;
-    /* text-shadow: 2px 2px #1b1835de; */
 }
 
 .slider {
@@ -1073,15 +1118,6 @@ span {
     background-image: url('/assets/img/slider4.webp');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.slider-bgs {
-    position: absolute;
-    /* background: #1b18356c; */
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
 }
 
 .slider-slides {
@@ -1112,16 +1148,33 @@ span {
 
 .slider-title {
     margin: 3rem 1rem 3rem 1rem;
+    height: 140px;
     font-size: clamp(0.85rem, 2.5vw, 1rem);
     color: var(--color-accent);
     line-height: 1.5rem;
+    scrollbar-width: thin;
+    overflow-y: scroll;
+    font-weight: 600;
+}
+
+.slider-title::-webkit-scrollbar {
+    width: 5px;
+}
+
+.slider-title::-webkit-scrollbar-thumb {
+    background: transparent;
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 20px;
+    border: transparent;
 }
 
 .slider-img {
     border: 2px solid var(--color-accent);
     border-radius: 50%;
     object-fit: cover;
-    max-width: 80px;
+    height: 60px;
+    width: 60px;
+    /* max-width: 80px; */
     margin: 0 auto;
     margin-bottom: 1rem;
 }
@@ -1139,11 +1192,14 @@ span {
 .slider-btns {
     position: absolute;
     width: 100%;
+    top: 40%;
     display: flex;
     justify-content: space-between;
+    pointer-events: none;
 }
 
 .slider a {
+    pointer-events: all;
     display: block;
     color: var(--color-accent);
     text-shadow: 2px 2px #1b1835de;
@@ -1162,7 +1218,7 @@ span {
     font-size: 2rem;
 }
 
-/* Contacto */
+/* Contact Section */
 
 .wrap-services:nth-child(1) {
     margin-top: 8rem;
@@ -1330,7 +1386,7 @@ textarea.input {
     display: none;
 }
 
-/* Our Team Members */
+/* Team Section  */
 
 .ourteam-wrap {
     display: flex;
@@ -1598,6 +1654,11 @@ textarea.input {
     .modal-form {
         margin: 0 auto;
     }
+
+    .slider-btns {
+        top: auto;
+        bottom: 0;
+    }
 }
 
 /*Responsive Mobile*/
@@ -1627,7 +1688,8 @@ textarea.input {
 
     .hero__img {
         height: 70vh;
-        padding-top: 6rem;
+        padding-top: 1rem;
+        object-position: 75% 35px;
     }
 
     .hero__text {
@@ -1701,18 +1763,27 @@ textarea.input {
     }
 
     .slider a {
-        margin: 1.3rem;
-        padding: 0.5rem;
+        margin: 0rem;
+        /* padding: 0.5rem; */
     }
 
     .slider i {
         font-size: 1.2rem;
     }
+    
+    .slider-header {
+        border-radius: 0px;
+    }
 
     .slider-title {
+        height: 200px;
         margin-top: 2rem;
     }
 
+    .slider-slide {
+        height: 90%;
+    }
+    
     .ourteam-card {
         width: 100%;
     }

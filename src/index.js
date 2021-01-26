@@ -1,12 +1,28 @@
 const d = document;
-
-
 const $header = d.querySelector("header");
 const $homeIntro = d.querySelector(".home-intro");
 const $heroText = d.querySelector(".hero__text");
 const $heroImage = d.querySelector(".hero__img");
 const path = location.pathname;
-const page = path.substring(0, path.lastIndexOf("."));
+
+/* Preloader */
+
+if(d.querySelector('.preload')) {
+    window.addEventListener('load', function preloader() {
+        const $preload = d.querySelector('.preload');
+        const $video = d.querySelector('.video-intro');
+        $video.playbackRate = 1.4;
+        
+        setTimeout(() => {
+            $preload.classList.add('preloaded');
+            setTimeout(() => {
+                $preload.remove();
+            }, 1000);
+        }, 2800);
+
+        window.removeEventListener('load', preloader);
+    });
+}
 
 /* Intersection Observer */
 
@@ -25,17 +41,17 @@ function headerObserver() {
         rootMargin: "-320px 0px 0px 0px"
     });
 
-    if(page === "/index" || path === "/") {
+    if(path === "/") {
         observer.observe($heroText);
     } else {
         observer.observe($heroImage);
     }
 
-    const $scale = document.querySelectorAll('.scale-in');
-    const $fadeIn = document.querySelectorAll('.fade-in');
+    const $scale = d.querySelectorAll('.scale-in');
+    const $fadeIn = d.querySelectorAll('.fade-in');
 
     const appearOptions = {
-        threshold: [0.3, 0.75],
+        rootMargin: "-320px 0px 0px 0px"
     };
 
     const scaleOnScroll = new IntersectionObserver(function(
@@ -68,8 +84,8 @@ function headerObserver() {
         scaleOnScroll.observe(scale);
     });
 
-    $fadeIn.forEach(scale => {
-        appearOnScroll.observe(scale);
+    $fadeIn.forEach(fade => {
+        appearOnScroll.observe(fade);
     });
 }
 
@@ -77,33 +93,29 @@ function headerObserver() {
 
 /* Banner Changer */
 
-if(path !== "/" || path !== "/index.html") {
+if(path !== "/") {
     function heroUpdate() {
-        if(page === "/somos") {
+        if(path === "/somos") {
             $heroImage.src = "assets/img/about.jpg";
             $heroImage.alt = "Altea Historia";
             $heroText.style.display = "none";
             $heroImage.style.height = "50vh";
+            $heroImage.style.objectPosition = "50%";
             $heroImage.style.padding = "0";
             $homeIntro.style.height = "auto";
-        } else if(page === "/contacto") {
+        } else if(path === "/contacto") {
             $heroImage.src = "assets/img/contact.jpg";
             $heroImage.alt = "Altea Contacto";
             $heroText.style.display = "none";
             $heroImage.style.height = "50vh";
-            $heroImage.style.padding = "0";
-            $homeIntro.style.height = "auto";
-        } else if(page === "/servicios") {
-            $heroImage.src = "assets/img/about.jpg";
-            $heroImage.alt = "Altea Historia";
-            $heroText.style.display = "none";
-            $heroImage.style.height = "50vh";
+            $heroImage.style.objectPosition = "80%";
             $heroImage.style.padding = "0";
             $homeIntro.style.height = "auto";
         } else {
             return
         }
     }
+    heroUpdate();
 }
 
 /* Contact Form */
@@ -136,7 +148,6 @@ if(d.querySelectorAll(".input")) {
 
 d.addEventListener("DOMContentLoaded", e => {
     headerObserver();
-    heroUpdate();
     focusInput();
 });
 
@@ -147,11 +158,7 @@ if(d.querySelector(".wrap-services")) {
     const $modal = d.querySelector(".program__modal");
 
     $programsContainer.addEventListener("click", e => {
-        // console.log(e);
-        // e.preventDefault();
-
         const $modalToggle = e.target.closest(".program__link");
-        // console.log($modalToggle);
         if(!$modalToggle) return;
 
         const $modal = $modalToggle.parentNode.nextElementSibling;
@@ -209,8 +216,9 @@ if(d.querySelector(".slider-btns .next")) {
         const $prevBtn = d.querySelector(".slider-btns .prev");
         const $slides = d.querySelectorAll(".slider-slide");
         let i = 0;
+        let interval;
 
-        setInterval(() => {
+        interval = setInterval(() => {
             $slides[i].classList.remove("active");
             i++;
 
@@ -224,6 +232,7 @@ if(d.querySelector(".slider-btns .next")) {
         d.addEventListener("click", e => {
             if(e.target === $prevBtn) {
                 e.preventDefault();
+                clearInterval(interval)
                 $slides[i].classList.remove("active");
                 i--;
 
@@ -236,6 +245,7 @@ if(d.querySelector(".slider-btns .next")) {
 
             if(e.target === $nextBtn) {
                 e.preventDefault();
+                clearInterval(interval)
                 $slides[i].classList.remove("active");
                 i++;
 
